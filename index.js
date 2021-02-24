@@ -75,19 +75,51 @@ async function monitorPrice() {
 
     // ADD YOUR CUSTOM TOKEN PAIRS HERE!!!
 
+
+
+    // await checkPair({
+    //   inputTokenSymbol: 'ETH',
+    //   inputTokenAddress: '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
+    //   outputTokenSymbol: 'MKR',
+    //   outputTokenAddress: ' 0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2',
+    //   inputAmount: web3.utils.toWei('1', 'ETHER')
+    // })
+
+
+
+    // await checkPair({
+    //   inputTokenSymbol: 'ETH',
+    //   inputTokenAddress: '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
+    //   outputTokenSymbol: 'MKR',
+    //   outputTokenAddress: '0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2',
+    //   inputAmount: web3.utils.toWei('1', 'ETHER')
+    // })
+    
+
+
+    await checkPair({
+      inputTokenSymbol: 'ETH',
+      inputTokenAddress: '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
+      outputTokenSymbol: 'SNX',
+      outputTokenAddress: '0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f',
+      inputAmount: web3.utils.toWei('1', 'ETHER')
+    })
+
+
+
     await checkPair({
       inputTokenSymbol: 'ETH',
       inputTokenAddress: '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
       outputTokenSymbol: 'MKR',
-      outputTokenAddress: '0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2',
+      outputTokenAddress: '0x6b175474e89094c44da98b954eedeac495271d0f',
       inputAmount: web3.utils.toWei('1', 'ETHER')
     })
 
     await checkPair({
       inputTokenSymbol: 'ETH',
       inputTokenAddress: '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
-      outputTokenSymbol: 'DAI',
-      outputTokenAddress: '0x6b175474e89094c44da98b954eedeac495271d0f',
+      outputTokenSymbol: 'BNB',
+      outputTokenAddress: '0xB8c77482e45F1F44dE1745F52C74426C631bDD52',
       inputAmount: web3.utils.toWei('1', 'ETHER')
     })
 
