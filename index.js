@@ -1,10 +1,3 @@
-// .ENV EXAMPLE BACKUP
-// RPC_URL="https://ropsten.infura.io/v3/YOUR_API_KEY"
-// PRIVATE_KEY="0x..."
-// ACCOUNT="0x..."
-
-
-
 require('dotenv').config()
 const express = require('express')
 const bodyParser = require('body-parser')
@@ -48,7 +41,8 @@ async function checkPair(args) {
 
   const uniswapResult = await exchangeContract.methods.getEthToTokenInputPrice(inputAmount).call()
   let kyberResult = await kyberRateContract.methods.getExpectedRate(inputTokenAddress, outputTokenAddress, inputAmount, true).call()
-
+console.log('KYBER RESULT : ', kyberResult);
+// console.log('KYBER CONTRACT',kyberRateContract);
   console.table([{
     'Input Token': inputTokenSymbol,
     'Output Token': outputTokenSymbol,
@@ -87,21 +81,29 @@ async function monitorPrice() {
 
 
 
-    // await checkPair({
-    //   inputTokenSymbol: 'ETH',
-    //   inputTokenAddress: '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
-    //   outputTokenSymbol: 'MKR',
-    //   outputTokenAddress: '0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2',
-    //   inputAmount: web3.utils.toWei('1', 'ETHER')
-    // })
-    
-
+    await checkPair({
+      inputTokenSymbol: 'ETH',
+      inputTokenAddress: '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
+      outputTokenSymbol: 'MKR',
+      outputTokenAddress: '0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2',
+      inputAmount: web3.utils.toWei('1', 'ETHER')
+    })
 
     await checkPair({
       inputTokenSymbol: 'ETH',
       inputTokenAddress: '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
-      outputTokenSymbol: 'SNX',
-      outputTokenAddress: '0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f',
+      outputTokenSymbol: 'MKR',
+      outputTokenAddress: '0x5af2be193a6abca9c8817001f45744777db30756',
+      inputAmount: web3.utils.toWei('1', 'ETHER')
+    })
+    
+    
+
+    await checkPair({
+      inputTokenSymbol: 'ETH',
+      inputTokenAddress: '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
+      outputTokenSymbol: 'UNI',
+      outputTokenAddress: '0x1f9840a85d5af5bf1d1762f925bdaddc4201f984',
       inputAmount: web3.utils.toWei('1', 'ETHER')
     })
 
@@ -126,8 +128,8 @@ async function monitorPrice() {
     await checkPair({
       inputTokenSymbol: 'ETH',
       inputTokenAddress: '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
-      outputTokenSymbol: 'KNC',
-      outputTokenAddress: '0xdd974d5c2e2928dea5f71b9825b8b646686bd200',
+      outputTokenSymbol: 'CEL',
+      outputTokenAddress: '0xaaaebe6fe48e54f431b0c390cfaf0b017d09d42d',
       inputAmount: web3.utils.toWei('1', 'ETHER')
     })
 
