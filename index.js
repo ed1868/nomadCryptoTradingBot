@@ -109,37 +109,37 @@ async function monitorPrice() {
 
 
 
-    await checkPair({
-      inputTokenSymbol: 'ETH',
-      inputTokenAddress: '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
-      outputTokenSymbol: 'MKR',
-      outputTokenAddress: '0x6b175474e89094c44da98b954eedeac495271d0f',
-      inputAmount: web3.utils.toWei('1', 'ETHER')
-    })
+    // await checkPair({
+    //   inputTokenSymbol: 'ETH',
+    //   inputTokenAddress: '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
+    //   outputTokenSymbol: 'MKR',
+    //   outputTokenAddress: '0x6b175474e89094c44da98b954eedeac495271d0f',
+    //   inputAmount: web3.utils.toWei('1', 'ETHER')
+    // })
 
-    await checkPair({
-      inputTokenSymbol: 'ETH',
-      inputTokenAddress: '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
-      outputTokenSymbol: 'BNB',
-      outputTokenAddress: '0xB8c77482e45F1F44dE1745F52C74426C631bDD52',
-      inputAmount: web3.utils.toWei('1', 'ETHER')
-    })
+    // await checkPair({
+    //   inputTokenSymbol: 'ETH',
+    //   inputTokenAddress: '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
+    //   outputTokenSymbol: 'BNB',
+    //   outputTokenAddress: '0xB8c77482e45F1F44dE1745F52C74426C631bDD52',
+    //   inputAmount: web3.utils.toWei('1', 'ETHER')
+    // })
 
-    await checkPair({
-      inputTokenSymbol: 'ETH',
-      inputTokenAddress: '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
-      outputTokenSymbol: 'CEL',
-      outputTokenAddress: '0xaaaebe6fe48e54f431b0c390cfaf0b017d09d42d',
-      inputAmount: web3.utils.toWei('1', 'ETHER')
-    })
+    // await checkPair({
+    //   inputTokenSymbol: 'ETH',
+    //   inputTokenAddress: '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
+    //   outputTokenSymbol: 'CEL',
+    //   outputTokenAddress: '0xaaaebe6fe48e54f431b0c390cfaf0b017d09d42d',
+    //   inputAmount: web3.utils.toWei('1', 'ETHER')
+    // })
 
-    await checkPair({
-      inputTokenSymbol: 'ETH',
-      inputTokenAddress: '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
-      outputTokenSymbol: 'LINK',
-      outputTokenAddress: '0x514910771af9ca656af840dff83e8264ecf986ca',
-      inputAmount: web3.utils.toWei('1', 'ETHER')
-    })
+    // await checkPair({
+    //   inputTokenSymbol: 'ETH',
+    //   inputTokenAddress: '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
+    //   outputTokenSymbol: 'LINK',
+    //   outputTokenAddress: '0x514910771af9ca656af840dff83e8264ecf986ca',
+    //   inputAmount: web3.utils.toWei('1', 'ETHER')
+    // })
 
   } catch (error) {
     console.error(error)
@@ -152,5 +152,5 @@ async function monitorPrice() {
 }
 
 // Check markets every n seconds
-const POLLING_INTERVAL = process.env.POLLING_INTERVAL || 3000 // 3 Seconds
+const POLLING_INTERVAL = process.env.POLLING_INTERVAL || 5000 // 5 Seconds
 priceMonitor = setInterval(async () => { await monitorPrice() }, POLLING_INTERVAL)
